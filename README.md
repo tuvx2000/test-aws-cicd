@@ -1,5 +1,5 @@
 # Wisdom-service
-update 05
+update 06
 
 
 
