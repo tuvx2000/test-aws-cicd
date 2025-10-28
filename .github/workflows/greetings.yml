@@ -1,10 +1,25 @@
 name: Greetings
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  # push:
+  #   branches: [ "master" ]
+  # pull_request:
+  #   branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      repository_name:
+        description: 'ECR repository name'
+        required: true
+        type: string
+      environment:
+        description: 'Environment'
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+        default: dev
 jobs:
   greeting:
     runs-on: ubuntu-latest
